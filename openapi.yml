@@ -26,4 +26,78 @@ paths:
                       description: The name of the node
                     relationshipCount:
                       type: integer
-                      description: The number of relationships for the node      
+                      description: The number of relationships for the node
+  /getTopReferrer:
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  customer:
+                    type: object
+                    properties:
+                      Person:
+                        type: object
+                        properties:
+                          referrerId:
+                            type: integer
+                            description: ID of the referrer
+                          customerId:
+                            type: integer
+                            description: ID of the customer
+                          name:
+                            type: string
+                            description: Name of the customer
+                  referrals:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Person:
+                          type: object
+                          properties:
+                            referrerId:
+                              type: integer
+                              description: ID of the referrer
+                            customerId:
+                              type: integer
+                              description: ID of the customer
+                            name:
+                              type: string
+                              description: Name of the customer
+                  closedReferrals:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Person:
+                          type: object
+                          properties:
+                            referrerId:
+                              type: integer
+                              description: ID of the referrer
+                            customerId:
+                              type: integer
+                              description: ID of the customer
+                            name:
+                              type: string
+                              description: Name of the customer
+                  source:
+                    type: object
+                    properties:
+                      Person:
+                        type: object
+                        properties:
+                          referrerId:
+                            type: integer
+                            description: ID of the referrer
+                          customerId:
+                            type: integer
+                            description: ID of the customer
+                          name:
+                            type: string
+                            description: Name of the customer
