@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: Neo4j Service
+  description: Neo4j Service
+  version: '2023-02-17T02:24:25Z'
+servers:
+  - url: https://zzi0l6eu68.execute-api.ap-southeast-1.amazonaws.com/{basePath}
+    variables:
+      basePath:
+        default: /prod
+paths:
+  /getTopNetwork:
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    node:
+                      type: string
+                      description: The name of the node
+                    relationshipCount:
+                      type: integer
+                      description: The number of relationships for the node      
